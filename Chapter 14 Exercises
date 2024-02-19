@@ -1,0 +1,82 @@
+import java.text.*;
+import java.util.Scanner;
+
+public class Exercises14 {
+    public static void main(String[] args) {
+
+        //Exercise 1
+        /*
+        //local declarations
+        DecimalFormat numform = new DecimalFormat(" 0.0#####;-0.0#####");
+        double angle;
+
+        //process and output
+        //angle is initialized, conerted to radians, and sine is calculated inside the method println()
+        //sine is formatted using the DecimalFormat class
+        System.out.println("\nangle\t\t  sine");
+        System.out.println("-----\t\t--------");
+        System.out.println(numform.format(angle = -90) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = -75) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = -60) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = -45) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = -30) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = -15) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 0) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 15) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 30) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 45) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 60) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 75) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        System.out.println(numform.format(angle = 90) + "\t\t" + numform.format(Math.sin(Math.toRadians(angle))));
+        */
+
+
+        //Exercise 2
+        /*
+        //local declarations
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat numform = new DecimalFormat("$#,##0.00");
+        double value, interest, deposit, numPerYear, year;
+
+        //input
+        System.out.print("Initial deposit: ");
+        deposit = scan.nextDouble();
+        System.out.print("Interest rate: ");
+        interest = scan.nextDouble();
+        System.out.print("Times per year: ");
+        numPerYear = scan.nextDouble();
+        System.out.print("Number of years: ");
+        year = scan.nextDouble();
+
+        //process
+        value = deposit * Math.pow((1.0 + interest / numPerYear), numPerYear * year);
+
+        //output
+        System.out.println("Value: " + numform.format(value));
+
+        scan.close();
+        */
+        
+
+
+        //Exercise 3
+        //local declarations
+        Scanner scan = new Scanner(System.in);
+        DecimalFormat numform1 = new DecimalFormat("#0.0"); //digit format for the approximate time
+        DecimalFormat numform2 = new DecimalFormat("#0"); //digit format for the interest rate
+        double interest, approxTime;
+
+        //input
+        System.out.print("Enter interest: ");
+        interest = scan.nextDouble();
+
+        //process
+        approxTime = 72.0 / interest / 100;
+
+        //output
+        System.out.println("With " + numform2.format(interest * 100) + "% interest, it takes about " + numform1.format(approxTime) + " years."); 
+        //multiplied the interest to print out the percentage counterpart and used different digit formats for the interest and time
+
+        scan.close();
+    }
+}
