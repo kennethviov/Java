@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class Exercises13 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        //Annual Appliance Cost
+        /*
+        //local declarations
+        double cost, kilowatt;
+
+        //input
+        System.out.println("Enter cost per kilowatt-hour in cents");
+        cost = scan.nextDouble();
+        System.out.println("Enter kilowatt-hours used per year");
+        kilowatt = scan.nextDouble();
+
+        //process
+        double annualCost = cost * kilowatt / 100;
+
+        //output
+        System.out.printf("Annual cost: %.4f", annualCost);
+        */
+
+
+
+        //Distance a Brick Travels
+        /*
+        //local declarations
+        double time, distance;
+
+        //input
+        System.out.println("Enter the number of seconds: ");
+        time = scan.nextDouble();
+
+        //process
+        distance = (1.0 / 2.0) * 32.174 * time * time;
+
+        //output
+        System.out.println("Distance: " + distance);
+        */
+
+
+
+        //Logaritm Base Two
+        /*
+        //local declarations
+        double x, baseTwo;
+
+        //input
+        System.out.println("Enter a double: ");
+        x = scan.nextDouble();
+
+        //process
+        baseTwo = (Math.log(x)) / (Math.log(2));
+
+        //output
+        System.out.println("Base 2 log of " + x + " is " + baseTwo);
+        */
+
+
+
+        //Harmonic Mean
+        //local declarations
+        int num1, num2;
+        double arithMean, harmMean;
+
+        //input
+        System.out.println("Enter X: ");
+        num1 = scan.nextInt();
+        System.out.println("Enter Y: ");
+        num2 = scan.nextInt();
+
+        //process
+        arithMean = (num1 + num2) /2;
+        harmMean = 2.0 / ((1.0 / num1) + (1.0 / num2));
+
+        //output
+        System.out.print("Arithmetic mean: " + arithMean + "\nHarmonic mean: " + harmMean);
+
+        scan.close();
+    }
+}
