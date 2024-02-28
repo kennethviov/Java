@@ -1,0 +1,46 @@
+import java.lang.Math;
+import java.util.Scanner;
+
+public class Exercises15 {
+    public static void main(String[] args) {
+        //exercise 1
+        /*
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        int x;
+        double val;
+
+        //input
+        System.out.print("Enter x: ");
+        x = scan.nextInt();
+        
+        //process
+        val = Math.pow((1.0 + (1.0 / x)), x);
+
+        //output
+        System.out.printf("Approximate to e: %2.7f", val);
+        */
+
+
+
+        //exercise 2
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        double angle, sine, cos;
+        double sum = 1;
+
+        System.out.print("Input an angle: ");
+        angle = scan.nextDouble();
+
+        sine = Math.sin(Math.toRadians(angle));
+        cos = Math.cos(Math.toRadians(angle));
+
+        System.out.printf("sin(%2.2f)\tis: %2.2f\n", angle, sine);
+        System.out.printf("cos(%2.2f)\tis: %2.2f\n", angle, cos);
+        System.out.printf("sin(%2.2f)^2\tis: %2.2f\n", angle, (sine * sine));
+        System.out.printf("cos(%2.2f)^2\tis: %2.2f\n", angle, (cos * cos));
+        System.out.printf("sum\t\tis: %2.2f", sum);
+
+        scan.close();
+    }
+}
