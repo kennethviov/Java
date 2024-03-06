@@ -1,0 +1,213 @@
+/*  This program calculates the total amount of an item and delivery cost
+    Name: Viovicente, Kenneth Reniel C.
+    Date: 
+*/
+
+import java.util.Scanner;
+
+public class Ex1InternetDelicatessen {
+    public static void main (String[] args) {
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        String item = "";
+        double price, deliver, total = 0, totalDel = 0;
+        final int delivery = 3;
+
+        //input
+        System.out.print("Enter the item: ");
+        item = scan.nextLine();
+        System.out.print("Enter the price: ");
+        price = scan.nextDouble();
+        System.out.print("Overnight delivery? (0 = no, 1 = yes): ");
+        deliver = scan.nextDouble();
+
+        //process
+        if (deliver == 1){
+            if (price < 10)
+                totalDel = delivery + 2;
+            if (price >= 10)
+                totalDel = delivery;
+        }
+
+        total = price + totalDel;
+
+        //output
+        System.out.println("Invoice:");
+        System.out.printf("  %s\t%.2f\n", item, price);
+        System.out.printf("  delivery\t%.2f\n", totalDel);
+        System.out.printf("  total:\t%.2f", total);
+
+        scan.close(); //scanner closed to avoid memory leak
+    }
+}
+
+
+/*  This program shows the efficiency of a steam engine based on the air and steam temperature
+    Name: Viovicente, Kenneth Reniel C.
+    Date: 
+*/
+
+import java.util.Scanner;
+
+public class Ex2SteamEngineEfficiency {
+    public static void main(String[] args){
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        int Tair, Tsteam;
+        double efficiency = 0;
+
+        //input
+        System.out.println("Enter air temperature in kelvin: ");
+        Tair = scan.nextInt();
+        System.out.println("Enter steam temperature in kelvin: ");
+        Tsteam = scan.nextInt();
+
+        //process and output in condition
+        if (Tsteam < 373)
+            efficiency = 0;
+        if (Tsteam >= 373)
+            efficiency = 1.0 - (double)Tair / Tsteam;
+
+        System.out.println("Efficiency: " + efficiency);
+
+        scan.close(); //scanner closed to avoid resource leak
+    }
+}
+
+
+/*  This program determines how long you should heat items in the oven
+    Name: Viovicente, Kenneth Reniel C.
+    Date:
+*/
+
+import java.util.Scanner;
+
+public class Ex3MicrowaveOvenHeatingTime {
+    public static void main(String[] args){
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        int item, time, min = 0, sec = 0;
+
+        //input
+        System.out.print("How many items to heat? ");
+        item = scan.nextInt();
+        System.out.print("Time to heat one item: ");
+        time = scan.nextInt();
+
+        //process and outputs in single branch if-statements
+        if (item == 1){
+            if (time >= 100){
+                min = time / 100;
+                sec = time % 100;
+            } else {
+                sec = time;
+            }
+            System.out.println("Heat for " + min + " minutes " + sec + " seconds");
+        }
+        if (item == 2){
+            time = (time / 2) + time;
+            if (time >= 100){
+                min = time / 100;
+                sec = time % 100;
+            } else {
+                sec = time;
+            }
+            System.out.println("Heat for " + min + " minutes " + sec + " seconds");
+        }
+        if (item == 3){
+            time *= 2;
+            if (time >= 100){
+                min = time / 100;
+                sec = time % 100;
+            } else {
+                sec = time;
+            }
+            System.out.println("Heat for " + min + " minutes " + sec + " seconds");
+        }
+        if (item > 3){
+            System.out.println("More that 3 items is not recommendable.");
+        }
+
+        scan.close(); //scanner closed to avoid resource leak
+    }
+}
+
+
+/*  This program assigns default value if the total points assigned to a character exceeds 15
+ *  Name: Viovicente, Kenneth Reniel C.
+ *  Date: 
+*/
+
+import java.util.Scanner;
+
+public class Ex4FantasyGame {
+    public static void main(String[] args){
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        String name;
+        int strength, health, luck;
+
+        //signs and inputs
+        System.out.println("Welcome to Yertle's Quest");
+        System.out.println("Enter the name of your character:");
+        name = scan.nextLine();
+        System.out.println("\nEnter points in each characteristic (Strength, Health, Luck)");
+        System.out.println("Be careful in assigning points for if the total exceeds 15 points, each characteristic will be assigned 5 points each.");
+        System.out.println("\nEnter strength (1 - 10): ");
+        strength = scan.nextInt();
+        System.out.println("Enter health (1 - 10): ");
+        health = scan.nextInt();
+        System.out.println("Enter luck (1 - 10): ");
+        luck = scan.nextInt();
+        System.out.println(" ");
+
+        //conditioned process
+        if ((strength + health + luck) > 15){
+            System.out.println("You have given your character too many points! Default values have been assigned.");
+            strength = 5;
+            health = 5;
+            luck = 5;
+        }
+        
+        //ouput
+        System.out.println(name + ", strength: " + strength + ", health: " + health + ", luck: " + luck);
+
+        scan.close(); //scanner closed to avoid resource leak
+    }
+}
+
+
+/*  This program calculates the charge for dumping trash based on the weight
+ *  Name: Viovicente, Kenneth Reniel C.
+ *  Date: 
+*/
+
+import java.util.Scanner;
+
+public class Ex5TownDump {
+    public static void main(String[] args) {
+        //declarations
+        Scanner scan = new Scanner(System.in);
+        final int baseCharge = 20;
+        int trash, charge = 0;
+
+        //input
+        System.out.print("Enter the weight of trash in pounds: ");
+        trash = scan.nextInt();
+
+        //process
+        if (trash <= 200){
+            charge = baseCharge;
+        }
+        if (trash > 200){
+            int additional = trash - 200;
+            int roundWeight = (int) Math.ceil((double) additional / 100);
+            charge = baseCharge + (roundWeight * 8);
+        }
+
+        //output
+        System.out.println("The charge is $" + charge + " for " + trash + " pounds of trash.");
+
+        scan.close(); //scanner closed to avoid resource leak
+    }
+}
