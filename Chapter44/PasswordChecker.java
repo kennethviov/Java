@@ -20,7 +20,7 @@ public class PasswordChecker {
                     System.out.println("Password must contain both uppercase and lowercase letters.");
             } else
                 System.out.println("Password must be at least 7 characters long.");
-        } while (password.length < 7 || !CheckCase(password) || !CheckDigits);
+        } while (password.length < 7 || !CheckCase(password) || !CheckDigits(password));
 
         scan.close();
     }
