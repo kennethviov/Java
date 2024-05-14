@@ -3,11 +3,12 @@ import java.util.Scanner;
 public class PasswordChecker {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
+        String password = "";
+        
         //input
         do {
             System.out.print("Enter password: ");
-            String password = scan.nextLine();
+            password = scan.nextLine();
     
             //output
             if (password.length() > 7) {
@@ -20,7 +21,7 @@ public class PasswordChecker {
                     System.out.println("Password must contain both uppercase and lowercase letters.");
             } else
                 System.out.println("Password must be at least 7 characters long.");
-        } while (password.length < 7 || !CheckCase(password) || !CheckDigits(password));
+        } while (password.length() < 7 || !CheckCase(password) || !CheckDigits(password));
 
         scan.close();
     }
