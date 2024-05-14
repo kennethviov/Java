@@ -5,20 +5,22 @@ public class PasswordChecker {
         Scanner scan = new Scanner(System.in);
 
         //input
-        System.out.print("Enter password: ");
-        String password = scan.nextLine();
-
-        //output
-        if (password.length() > 7) {
-            if (CheckCase(password)) {
-                if (CheckDigits(password))
-                    System.out.println("Password is valid.");
-                else
-                    System.out.println("Password must contain numbers.");
+        do {
+            System.out.print("Enter password: ");
+            String password = scan.nextLine();
+    
+            //output
+            if (password.length() > 7) {
+                if (CheckCase(password)) {
+                    if (CheckDigits(password))
+                        System.out.println("Password is valid.");
+                    else
+                        System.out.println("Password must contain numbers.");
+                } else
+                    System.out.println("Password must contain both uppercase and lowercase letters.");
             } else
-                System.out.println("Password must contain both uppercase and lowercase letters.");
-        } else
-            System.out.println("Password must be at least 7 characters long.");
+                System.out.println("Password must be at least 7 characters long.");
+        } while (password.length < 7 || !CheckCase(password) || !CheckDigits);
 
         scan.close();
     }
